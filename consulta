@@ -1,0 +1,57 @@
+-- CREAR BASE DE DATOS
+create database name_database;
+
+-- Crear tablas
+CREATE TABLE IF NOT EXISTS public.c_user_types
+(
+    id character varying(36) COLLATE pg_catalog."default" NOT NULL,
+    description character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    enable boolean NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    deleted_at timestamp with time zone,
+    code character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT c_user_types_pkey PRIMARY KEY (id)
+)
+
+
+-- Insertar registros
+insert into c_modules (id, name, description,code, icon, position, created_at, deleted_at)
+	values('5b81bce3-0d87-4b09-a351-2d50d98657a6','Cotizaciones',
+	'M. Cotizaciones','logistics.quotations','ri-receipt-2-line o ri-currency-line',28,'2024-01-11 00:33:54',NULL);
+
+-- Consultar registros
+select * from c_modules;
+
+-- Actualizar tablas
+update c_modules 
+set code ='quotations'
+where id='5b81bce3-0d87-4b09-a351-2d50d98657a6';
+
+-- Eliminar registros
+delete from c_modules
+where id='5b81bce3-0d87-4b09-a351-2d50d98657a6';
+
+-- Operadores aritmeticos
+select 11/2; -- division
+select 11%2; -- residuo
+select 10*2; -- multiplicacion
+select 5=5; -- igualdad
+select 2<5; --menor
+select 2>5; --mayor
+select 2<=5; -- menor igual
+select 2>=5; -- mayor igual
+select 2!=5; -- diferencia
+
+-- Operadores logicos
+select true and true;
+select true or true;
+select not true;
+
+-- Operador de concatenacion
+select 'lady' || ' diana';
+select concat('lady diana entiende',' C#');
+
+
+
+
+
